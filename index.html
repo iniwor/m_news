@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor Informativo · Generador batch 5:4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Barlow+Condensed:wght@500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+:root{
+  --ink:#0E1013;--press:#171A20;--panel:#1F242C;--line:#2E3540;
+  --paper:#F2F1EC;--mute:#8C97A6;--signal:#F2C14E;--ok:#89d185;--bad:#ff7373;
+  --util:'Barlow Condensed','Arial Narrow',sans-serif;
+  --body:'Archivo',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--press);color:var(--paper);font-family:var(--body);-webkit-font-smoothing:antialiased}
+button,input,textarea{font-family:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+[hidden]{display:none!important}
+.topbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:14px 22px;background:var(--ink);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.mark{font-family:var(--util);font-size:18px;letter-spacing:.26em;text-transform:uppercase}
+.job{font-family:var(--util);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);border-left:1px solid var(--line);padding-left:18px}
+.spacer{flex:1}
+.status{font-family:var(--util);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.shell{display:grid;grid-template-columns:390px minmax(0,1fr);align-items:start}
+@media(max-width:1100px){.shell{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--panel);border-right:1px solid var(--line);padding:20px;position:sticky;top:60px;max-height:calc(100vh - 60px);overflow-y:auto;min-width:0}
+@media(max-width:1100px){.panel{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line)}}
+.grp{margin-bottom:20px}
+.grp>label,.grp .lbl{display:block;font-family:var(--util);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:7px}
+.panel textarea{width:100%;background:var(--ink);border:1px solid var(--line);color:var(--paper);border-radius:3px;padding:10px 11px;font-size:14px;line-height:1.45;resize:vertical;min-height:230px}
+.panel input[type=range]{width:100%;accent-color:#C8CDD4}
+.hint{font-size:11.5px;color:var(--mute);margin-top:6px;line-height:1.5}
+.hint code{background:var(--ink);padding:1px 5px;border-radius:3px;color:var(--paper);font-size:11px}
+.sub{font-family:var(--util);font-size:11px;letter-spacing:.12em;color:var(--mute);text-transform:uppercase}
+.rowpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.btns{display:grid;gap:8px}
+.btnrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.btn{width:100%;border:0;border-radius:3px;padding:12px;cursor:pointer;background:var(--paper);color:var(--ink);font-family:var(--util);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.btn:hover{filter:brightness(.92)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--mute);font-weight:500}
+.btn.ghost:hover{color:var(--paper);border-color:var(--paper);filter:none}
+.btn.secondary{background:#343B45;color:var(--paper)}
+.board{padding:26px;min-width:0}
+.boardhead{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cardhead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cardhead strong{font-size:14px}
+.meta{font-size:11px;color:var(--mute);word-break:break-all}
+.stage{width:100%;background:#000;border:1px solid var(--line);overflow:hidden;line-height:0;border-radius:4px}
+.stage canvas{display:block;width:100%;max-width:100%;height:auto}
+.cardactions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini{font-size:12px;line-height:1.45;color:#d9dee4;word-break:break-word}
+.pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:4px 8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:var(--util);color:var(--mute)}
+.pill.ok{border-color:rgba(137,209,133,.35);color:var(--ok)}
+.pill.bad{border-color:rgba(255,115,115,.35);color:var(--bad)}
+.empty{padding:28px;border:1px dashed var(--line);border-radius:6px;color:var(--mute);text-align:center;background:rgba(0,0,0,.1)}
+.smallstatus{font-size:12px;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);border:1px solid var(--line);color:var(--paper);padding:12px 18px;border-radius:3px;font-size:13px;z-index:99;opacity:0;pointer-events:none;transition:opacity .2s;max-width:min(620px,90vw)}
+.toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="mark">Monitor Informativo</div>
+  <div class="job">Batch · 4 noticias · 5:4</div>
+  <div class="spacer"></div>
+  <div class="status" id="status">Listo</div>
+</header>
+<div class="shell">
+  <aside class="panel">
+    <div class="grp">
+      <label for="jsonInput">Noticias en JSON</label>
+      <textarea id="jsonInput" spellcheck="false"></textarea>
+      <p class="hint">Cada objeto necesita <code>titulo</code> e <code>imagen</code>. Opcionales: <code>slug</code>, <code>fx</code>, <code>fy</code>, <code>zoom</code>. Para la automatización normal se usarán 4 objetos.</p>
+    </div>
+    <div class="grp">
+      <span class="lbl">Plantilla</span>
+      <div class="btnrow">
+        <button class="btn secondary" id="fillExample" type="button">Cargar ejemplo</button>
+        <button class="btn ghost" id="clearJson" type="button">Limpiar JSON</button>
+      </div>
+    </div>
+    <div class="grp">
+      <span class="lbl">Encuadre global</span>
+      <div class="rowpair">
+        <div><span class="sub">Horizontal</span><input type="range" id="fx" min="0" max="100" value="50"></div>
+        <div><span class="sub">Vertical</span><input type="range" id="fy" min="0" max="100" value="45"></div>
+      </div>
+      <span class="sub" style="display:block;margin-top:8px">Acercamiento</span>
+      <input type="range" id="zoom" min="100" max="240" value="100">
+    </div>
+    <div class="grp">
+      <div class="btns">
+        <button class="btn" id="renderAll" type="button">Renderizar portadas</button>
+        <button class="btn secondary" id="downloadZip" type="button">Descargar ZIP</button>
+        <button class="btn ghost" id="downloadManifest" type="button">Descargar manifiesto JSON</button>
+      </div>
+      <p class="hint">Cada portada se exporta en <strong>1350 × 1080 px</strong>.</p>
+    </div>
+    <div class="grp">
+      <span class="lbl">Automatización</span>
+      <p class="hint">Acepta <code>?data=JSON_CODIFICADO</code>. Si añades <code>&autodownload=1</code>, intentará descargar el ZIP al terminar.</p>
+    </div>
+  </aside>
+  <main class="board">
+    <div class="boardhead">
+      <div>
+        <div class="mark" style="font-size:14px;letter-spacing:.2em">Vista previa</div>
+        <div class="smallstatus" id="summary">Sin renderizar</div>
+      </div>
+      <div class="pill" id="countPill">0 portadas</div>
+    </div>
+    <div id="cards" class="cards"></div>
+    <div class="empty" id="emptyState">Pega el JSON y haz clic en <strong>Renderizar portadas</strong>.</div>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+'use strict';
+var $=function(s,c){return(c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var W=1350,H=1080;
+var LOGO_FIJO='https://lh3.googleusercontent.com/d/1ijgxW2hBqYsO0lmG_FIhoV7pzKYjfrAH=w1000';
+var LOGO_POS='left',LOGO_SIZE=158,ADORNO='#E4322B',LINEA=640,RATIO=1.06;
+var state={fx:50,fy:45,zoom:100,escala:70,grad:100,logo:null,logoTainted:false,items:[],rendered:[]};
+var toastEl=$('#toast'),toastT;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('on')},4200)}
+function status(t){$('#status').textContent=t}
+function setSummary(t){$('#summary').textContent=t}
+function updateCount(){var n=state.rendered.length;$('#countPill').textContent=n+' portada'+(n===1?'':'s')}
+function fTit(s){return'700 '+s+'px Oswald,"Arial Narrow",sans-serif'}
+function slug(s){return(s||'portada').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,52)||'portada'}
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,function(m){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]})}
+function trozos(text){var raw=String(text).split(/\s+/).filter(Boolean),out=[];for(var i=0;i<raw.length;i++){var partes=raw[i].split(/(?<=[\u2013\u2014\-\/])/);for(var j=0;j<partes.length;j++)if(partes[j])out.push({t:partes[j],pega:j>0})}return out}
+function wrap(ctx,text,maxW,info){var toks=trozos(text),lines=[],cur='';for(var i=0;i<toks.length;i++){var tk=toks[i];if(ctx.measureText(tk.t).width>maxW){if(info)info.roto=true;if(cur){lines.push(cur);cur=''}var pedazo='';for(var c=0;c<tk.t.length;c++){if(ctx.measureText(pedazo+tk.t[c]).width>maxW&&pedazo){lines.push(pedazo);pedazo=''}pedazo+=tk.t[c]}cur=pedazo;continue}var t=cur?(tk.pega?cur+tk.t:cur+' '+tk.t):tk.t;if(ctx.measureText(t).width<=maxW||!cur){cur=t}else{lines.push(cur);cur=tk.t}}if(cur)lines.push(cur);return lines}
+function fitBlock(ctx,text,maxW,maxH,start,min,ratio,fontFn){function probar(s,tolerar){ctx.font=fontFn(s);var info={roto:false},lines=wrap(ctx,text,maxW,info),widest=0;for(var i=0;i<lines.length;i++)widest=Math.max(widest,ctx.measureText(lines[i]).width);if(info.roto&&!tolerar)return null;if(lines.length*(s*ratio)<=maxH&&widest<=maxW+.5)return{size:s,lines:lines,lh:s*ratio};return null}var lo=min,hi=Math.max(min,Math.round(start)),best=null;while(lo<=hi){var mid=(lo+hi)>>1,r=probar(mid);if(r){best=r;lo=mid+1}else{hi=mid-1}}return best||probar(min,true)||{size:min,lines:wrap(ctx,text,maxW,null),lh:min*ratio}}
+function cover(ctx,im,x,y,w,h,fx,fy,zoom){ctx.save();ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();if(im&&im.naturalWidth){var s=Math.max(w/im.naturalWidth,h/im.naturalHeight)*(zoom/100);var dw=im.naturalWidth*s,dh=im.naturalHeight*s;ctx.drawImage(im,x+(w-dw)*(fx/100),y+(h-dh)*(fy/100),dw,dh)}else{ctx.fillStyle='#14171C';ctx.fillRect(x,y,w,h);ctx.strokeStyle='#1B2028';ctx.lineWidth=34;for(var i=-h;i<w+h;i+=68){ctx.beginPath();ctx.moveTo(x+i,y);ctx.lineTo(x+i+h,y+h);ctx.stroke()}ctx.fillStyle='rgba(255,255,255,.2)';ctx.font='600 42px "Barlow Condensed",sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('F O T O',x+w/2,y+h/2)}ctx.restore()}
+function drawLogo(ctx){var d=LOGO_SIZE,r=d/2,m=Math.round(W*.045);var cx=LOGO_POS==='right'?W-m-r:m+r,cy=m+r;ctx.save();ctx.shadowColor='rgba(0,0,0,.42)';ctx.shadowBlur=26;ctx.shadowOffsetY=6;ctx.fillStyle='#FFF';ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();ctx.restore();var pad=Math.round(d*.07),ir=r-pad;ctx.save();ctx.beginPath();ctx.arc(cx,cy,ir,0,Math.PI*2);ctx.clip();var im=state.logo;if(im&&im.naturalWidth){var s=Math.max((ir*2)/im.naturalWidth,(ir*2)/im.naturalHeight),dw=im.naturalWidth*s,dh=im.naturalHeight*s;ctx.drawImage(im,cx-dw/2,cy-dh/2,dw,dh)}else{ctx.fillStyle='#E7E9EC';ctx.fillRect(cx-ir,cy-ir,ir*2,ir*2);ctx.fillStyle='#9AA3AE';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='700 '+Math.round(d*.17)+'px "Barlow Condensed",sans-serif';ctx.fillText('LOGO',cx,cy)}ctx.restore()}
+function draw(ctx,item){ctx.clearRect(0,0,W,H);cover(ctx,item.im,0,0,W,H,item.fx!=null?item.fx:state.fx,item.fy!=null?item.fy:state.fy,item.zoom!=null?item.zoom:state.zoom);var mx=Math.round(W*.075),maxW=W-mx*2,bottom=H-Math.round(H*.048),texto=(item.titulo||'Escribe aquí el título de la nota').toUpperCase();var fit=fitBlock(ctx,texto,maxW,H*.30*state.escala/100,160,34,RATIO,fTit),hlTop=bottom-fit.lines.length*fit.lh,lw=Math.min(LINEA,maxW),ly=Math.round(hlTop-Math.max(34,fit.size*.52));var maxA=state.grad/100,gTop=Math.max(0,Math.round(ly-H*.42)),g=ctx.createLinearGradient(0,gTop,0,H);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.30,'rgba(0,0,0,'+(maxA*.22).toFixed(3)+')');g.addColorStop(.55,'rgba(0,0,0,'+(maxA*.52).toFixed(3)+')');g.addColorStop(.78,'rgba(0,0,0,'+(maxA*.82).toFixed(3)+')');g.addColorStop(1,'rgba(0,0,0,'+maxA.toFixed(3)+')');ctx.fillStyle=g;ctx.fillRect(0,gTop,W,H-gTop);var gt=ctx.createLinearGradient(0,0,0,Math.round(H*.22));gt.addColorStop(0,'rgba(0,0,0,.38)');gt.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=gt;ctx.fillRect(0,0,W,Math.round(H*.22));var lg=ctx.createLinearGradient(W/2-lw/2,0,W/2+lw/2,0);lg.addColorStop(0,'rgba(0,0,0,0)');lg.addColorStop(.5,ADORNO);lg.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=lg;ctx.fillRect(W/2-lw/2,ly,lw,6);ctx.font=fTit(fit.size);ctx.fillStyle='#FFF';ctx.textAlign='center';ctx.textBaseline='top';ctx.shadowColor='rgba(0,0,0,.55)';ctx.shadowBlur=22;ctx.shadowOffsetY=4;for(var i=0;i<fit.lines.length;i++)ctx.fillText(fit.lines[i],W/2,hlTop+i*fit.lh);ctx.shadowColor='transparent';ctx.shadowBlur=0;ctx.shadowOffsetY=0;drawLogo(ctx)}
+function loadDirect(u,cross){return new Promise(function(ok,no){var im=new Image();if(cross)im.crossOrigin='anonymous';im.onload=function(){ok({im:im,tainted:!cross&&!/^data:/i.test(u)})};im.onerror=function(){no(new Error('No se pudo cargar la imagen'))};im.src=u})}
+function loadImage(src){return new Promise(function(resolve,reject){if(!src){reject(new Error('Sin imagen'));return}var url=String(src).trim();if(!url){reject(new Error('Sin imagen'));return}if(/^\/\//.test(url))url='https:'+url;if(/^data:/i.test(url)){loadDirect(url,false).then(resolve).catch(reject);return}fetch(url,{mode:'cors'}).then(function(res){if(!res.ok)throw new Error('HTTP');return res.blob()}).then(function(blob){if(!/^image\//.test(blob.type))throw new Error('Tipo');return new Promise(function(ok,no){var fr=new FileReader();fr.onload=function(){ok(fr.result)};fr.onerror=no;fr.readAsDataURL(blob)})}).then(function(dataUrl){return loadDirect(dataUrl,false)}).then(resolve).catch(function(){loadDirect(url,true).then(function(r){r.tainted=false;resolve(r)}).catch(function(){loadDirect(url,false).then(function(r){r.tainted=true;resolve(r)}).catch(reject)})})})}
+function safeArrayParse(raw){var data=JSON.parse(raw);if(!Array.isArray(data))throw new Error('El JSON debe ser un arreglo.');return data}
+function normalizeItems(arr){return arr.map(function(item,idx){var titulo=item&&item.titulo!=null?String(item.titulo).trim():'';if(!titulo)throw new Error('El elemento '+(idx+1)+' no tiene título.');var imagen=item&&item.imagen!=null?String(item.imagen).trim():'';return{index:idx+1,titulo:titulo,imagen:imagen,fx:item.fx!=null?+item.fx:null,fy:item.fy!=null?+item.fy:null,zoom:item.zoom!=null?+item.zoom:null,slug:item.slug?String(item.slug):('monitor-'+String(idx+1).padStart(2,'0')+'-'+slug(titulo)),im:null,tainted:false,ok:false,error:''}})}
+function makeCard(item){var card=document.createElement('article');card.className='card';card.innerHTML='<div class="cardhead"><div><strong>Nota '+String(item.index).padStart(2,'0')+'</strong><div class="meta">'+escapeHtml(item.slug)+'.png</div></div><span class="pill '+(item.ok?'ok':'bad')+'">'+(item.ok?'Lista':'Con aviso')+'</span></div><div class="stage"><canvas width="1350" height="1080"></canvas></div><div class="mini"></div><div class="cardactions"><button class="btn secondary" type="button">Descargar PNG</button><button class="btn ghost" type="button">Copiar JSON</button></div>';var canvas=$('canvas',card),ctx=canvas.getContext('2d');draw(ctx,item);$('.mini',card).innerHTML='<strong>Título:</strong> '+escapeHtml(item.titulo)+(item.error?'<br><strong>Aviso:</strong> '+escapeHtml(item.error):'');var pill=$('.pill',card);pill.className='pill '+(item.ok?'ok':'bad');pill.textContent=item.ok?(item.tainted||state.logoTainted?'Lista*':'Lista'):'Con aviso';var buttons=$$('.cardactions button',card);buttons[0].addEventListener('click',function(){try{var a=document.createElement('a');a.download=item.slug+'.png';a.href=canvas.toDataURL('image/png');document.body.appendChild(a);a.click();document.body.removeChild(a)}catch(err){toast('No se pudo exportar el PNG por una restricción CORS de la imagen o del logotipo.')}});buttons[1].addEventListener('click',function(){var json=JSON.stringify({titulo:item.titulo,imagen:item.imagen,slug:item.slug},null,2);if(navigator.clipboard){navigator.clipboard.writeText(json).then(function(){toast('JSON copiado.')}).catch(function(){toast('No se pudo copiar.')})}else toast('El navegador no permite copiar automáticamente.')});return card}
+async function renderAll(){var raw=$('#jsonInput').value.trim();if(!raw){toast('Pega primero el JSON.');return}var parsed;try{parsed=safeArrayParse(raw);state.items=normalizeItems(parsed)}catch(err){toast(err.message||'JSON inválido.');status('Error');return}status('Cargando imágenes…');setSummary('Preparando '+state.items.length+' nota'+(state.items.length===1?'':'s')+'…');$('#cards').innerHTML='';$('#emptyState').hidden=true;state.rendered=[];updateCount();for(var i=0;i<state.items.length;i++){var item=state.items[i];try{if(item.imagen){var r=await loadImage(item.imagen);item.im=r.im;item.tainted=!!r.tainted;item.ok=true;if(item.tainted)item.error='La imagen se visualiza, pero el sitio podría bloquear la exportación por CORS.'}else{item.ok=false;item.error='Sin imagen. Se renderizó con placeholder.'}}catch(err){item.ok=false;item.error='No se pudo cargar la imagen.'}state.rendered.push(item);$('#cards').appendChild(makeCard(item));updateCount()}var okCount=state.rendered.filter(function(x){return x.ok}).length;status('Renderizado');setSummary(okCount+' de '+state.rendered.length+' portadas con imagen cargada.');if(state.rendered.some(function(x){return x.tainted})||state.logoTainted)toast('Hay un recurso externo que podría bloquear la exportación. Si sucede, sustituye esa imagen por otra URL compatible.');if(!state.rendered.length)$('#emptyState').hidden=false}
+async function downloadZip(){if(!state.rendered.length){toast('Primero renderiza las portadas.');return}if(typeof JSZip==='undefined'){toast('No se cargó JSZip. Revisa la conexión.');return}status('Empaquetando ZIP…');var zip=new JSZip(),manifest=[],count=0,cards=$$('#cards .card');for(var i=0;i<state.rendered.length;i++){var item=state.rendered[i],canvas=$('canvas',cards[i]);try{var dataUrl=canvas.toDataURL('image/png');zip.file(item.slug+'.png',dataUrl.split(',')[1],{base64:true});manifest.push({titulo:item.titulo,imagen:item.imagen,slug:item.slug+'.png',ok:true,aviso:item.error||''});count++}catch(err){manifest.push({titulo:item.titulo,imagen:item.imagen,slug:item.slug+'.png',ok:false,aviso:'No se pudo exportar por CORS.'})}}zip.file('manifiesto.json',JSON.stringify(manifest,null,2));var blob=await zip.generateAsync({type:'blob'}),a=document.createElement('a');a.download='monitor-portadas-'+new Date().toISOString().slice(0,10)+'.zip';a.href=URL.createObjectURL(blob);document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(a.href)},1000);status('ZIP descargado');toast('ZIP generado con '+count+' PNG exportables.')}
+function downloadManifest(){var payload=state.rendered.map(function(item){return{titulo:item.titulo,imagen:item.imagen,slug:item.slug,ok:item.ok,aviso:item.error||''}}),blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.download='monitor-manifiesto.json';a.href=URL.createObjectURL(blob);document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(a.href)},1000)}
+function setExample(){$('#jsonInput').value=JSON.stringify([{titulo:'Bloqueo complica la circulación en una de las principales vías del Edomex',imagen:'https://picsum.photos/1600/1000?random=31',slug:'01-bloqueo-edomex'},{titulo:'Autoridades anuncian ajustes tras afectaciones en el servicio de transporte',imagen:'https://picsum.photos/1600/1000?random=32',slug:'02-transporte-edomex'},{titulo:'Operativo deja detenidos y asegura vehículos en municipio mexiquense',imagen:'https://picsum.photos/1600/1000?random=33',slug:'03-operativo-edomex'},{titulo:'Nueva decisión federal tendrá efectos en millones de usuarios',imagen:'https://picsum.photos/1600/1000?random=34',slug:'04-nacional'}],null,2)}
+function bindRange(id,key){$('#'+id).addEventListener('input',function(e){state[key]=+e.target.value||0})}
+bindRange('fx','fx');bindRange('fy','fy');bindRange('zoom','zoom');
+$('#renderAll').addEventListener('click',renderAll);$('#downloadZip').addEventListener('click',downloadZip);$('#downloadManifest').addEventListener('click',downloadManifest);$('#fillExample').addEventListener('click',function(){setExample();toast('Ejemplo cargado.')});$('#clearJson').addEventListener('click',function(){$('#jsonInput').value='';toast('JSON limpiado.')});
+function loadLogo(){if(!LOGO_FIJO)return Promise.resolve();return loadImage(LOGO_FIJO).then(function(r){state.logo=r.im;state.logoTainted=!!r.tainted}).catch(function(){toast('No se pudo cargar el logotipo fijo.')})}
+function maybeBootFromQuery(){var params=new URLSearchParams(location.search),raw=params.get('data');if(!raw)return;try{$('#jsonInput').value=decodeURIComponent(raw)}catch(e){$('#jsonInput').value=raw}renderAll().then(function(){if(params.get('autodownload')==='1')setTimeout(function(){downloadZip()},600)})}
+window.MonitorBatch={renderFromArray:function(arr){$('#jsonInput').value=JSON.stringify(arr,null,2);return renderAll()},renderFromJSON:function(json){$('#jsonInput').value=json;return renderAll()},downloadAll:downloadZip,getRendered:function(){return state.rendered.slice()}};
+setExample();
+Promise.resolve(document.fonts&&document.fonts.ready?document.fonts.ready:null).then(loadLogo).then(function(){status('Listo');maybeBootFromQuery()});
+})();
+</script>
+</body>
+</html>
