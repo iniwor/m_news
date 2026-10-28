@@ -45,7 +45,9 @@ async function render(page, item, filepath) {
   );
   if (state.length !== 1 || !state[0].ok) throw new Error('Fotografía no cargada: ' + JSON.stringify(state));
   await page.addStyleTag({content:[
-    // Oculta avisos flotantes de la interfaz: nunca deben formar parte de la portada.\n    '#toast {display:none!important}',\n    '#cards .card {overflow:visible!important}',
+    // Oculta avisos flotantes de la interfaz: nunca deben formar parte de la portada.
+    '#toast {display:none!important}',
+    '#cards .card {overflow:visible!important}',
     '#cards .stage {overflow:visible!important;width:1350px!important}',
     '#cards .stage canvas {width:1350px!important;height:1080px!important;max-width:none!important}'
   ].join('\n')});
