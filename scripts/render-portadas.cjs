@@ -3,12 +3,15 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { chromium } = require('playwright');
+const sharp = require('sharp');
 const ROOT = path.resolve(__dirname, '..');
 const REQUESTS = path.join(ROOT, 'requests');
 const OUTPUT = path.join(ROOT, 'portadas');
 const GENERATOR = 'https://iniwor.github.io/m_news/';
 const REF = process.env.GITHUB_REF_NAME || 'main';
 const SAFE = /^[a-z0-9][a-z0-9_-]{0,79}$/;
+const TARGET_WEBP_BYTES = 700 * 1024;
+const WEBP_QUALITIES = [90, 87, 84, 82];
 
 function validate(name, data) {
   const id = path.basename(name, '.json');
@@ -57,6 +60,30 @@ async function render(page, item, filepath) {
   return {width,height,bytes:png.length};
 }
 
+async function compressWebp(pngPath, webpPath) {
+  const original = (await fs.stat(pngPath)).size;
+  let chosen = null;
+  // Empieza con calidad 90; baja solo si hace falta para acercarse a 700 KiB.
+  for (const quality of WEBP_QUALITIES) {
+    const buffer = await sharp(pngPath).webp({ quality, effort: 6, smartSubsample: true }).toBuffer();
+    chosen = { buffer, quality };
+    if (buffer.length <= TARGET_WEBP_BYTES) break;
+  }
+  const meta = await sharp(chosen.buffer).metadata();
+  if (meta.format !== 'webp' || meta.width !== 1350 || meta.height !== 1080 ||
+      chosen.buffer.subarray(0,4).toString() !== 'RIFF' ||
+      chosen.buffer.subarray(8,12).toString() !== 'WEBP') {
+    throw new Error('WebP inválido o dimensiones inesperadas');
+  }
+  await fs.writeFile(webpPath, chosen.buffer);
+  return {
+    formato: 'webp', calidad: chosen.quality,
+    bytes: chosen.buffer.length, bytes_png: original,
+    ahorro_pct: Math.round((1 - chosen.buffer.length / original) * 100),
+    objetivo_700kb: chosen.buffer.length <= TARGET_WEBP_BYTES
+  };
+}
+
 async function main(){
   await fs.mkdir(REQUESTS,{recursive:true});
   await fs.mkdir(OUTPUT,{recursive:true});
@@ -75,15 +102,22 @@ async function main(){
       await fs.mkdir(dir,{recursive:true});
       const portadas=[];
       for(const item of data.items){
-        const pathname='portadas/'+id+'/'+item.slug+'.png';
-        const details=await render(page,item,path.join(ROOT,pathname));
+        const pngPath='portadas/'+id+'/'+item.slug+'.png';
+        const webpPath='portadas/'+id+'/'+item.slug+'.webp';
+        const dimensions=await render(page,item,path.join(ROOT,pngPath));
+        const optimized=await compressWebp(path.join(ROOT,pngPath),path.join(ROOT,webpPath));
+        const rootUrl='https://raw.githubusercontent.com/iniwor/m_news/'+REF+'/';
         portadas.push({
-          titulo:item.titulo,slug:item.slug,archivo:pathname,
-          url_directa:'https://raw.githubusercontent.com/iniwor/m_news/'+REF+'/'+pathname,
-          url_pages:'https://iniwor.github.io/m_news/'+pathname,
-          ...details
+          titulo:item.titulo,slug:item.slug,archivo:webpPath,
+          archivo_png:pngPath,
+          url_directa:rootUrl+webpPath,
+          url_webp:rootUrl+webpPath,
+          url_png:rootUrl+pngPath,
+          url_pages:'https://iniwor.github.io/m_news/'+webpPath,
+          width:dimensions.width,height:dimensions.height,
+          ...optimized
         });
-        console.log('Portada exportada: '+pathname);
+        console.log('WebP listo: '+webpPath+' ('+optimized.bytes+' bytes; calidad '+optimized.calidad+')');
       }
       await fs.writeFile(manifestPath,JSON.stringify({
         ok:true,solicitud:id,plantilla:GENERATOR,ref:REF,total:portadas.length,
