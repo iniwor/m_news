@@ -1,24 +1,27 @@
-# Portadas PNG directas para Buffer
+# Portadas WebP optimizadas para Buffer
 
-La plantilla visual original permanece sin cambios en index.html.
+La plantilla original de `index.html` no se modifica. La salida conserva 1350 × 1080 píxeles.
 
-Para crear 1 o 2 portadas, añade un archivo JSON nuevo al directorio requests/ en la rama main. Ejemplo:
+Para crear una o dos portadas, añade un JSON a `requests/<id-unico>.json` en `main`:
 
+```json
+{
+  "items": [
     {
-      "items": [
-        {
-          "titulo": "Título comprobado de la noticia",
-          "imagen": "https://ejemplo.org/fotografia.jpg",
-          "slug": "01-noticia"
-        }
-      ]
+      "titulo": "Título verificado de la noticia",
+      "imagen": "https://ejemplo.org/fotografia.jpg",
+      "slug": "01-noticia"
     }
+  ]
+}
+```
 
-Al añadir el archivo se ejecuta GitHub Actions. El renderizador abre el mismo generador original m_news y captura el canvas a resolución 1350 × 1080. El PNG queda guardado en portadas/<id-solicitud>/<slug>.png, y se crea portadas/<id-solicitud>/manifest.json.
+GitHub Actions abre el generador m_news, captura el canvas original en PNG y genera además un WebP optimizado con Sharp, comenzando en calidad 90 y bajando gradualmente hasta 82 solo si hace falta para intentar no superar 700 KiB. Si el objetivo no es posible con calidad mínima 82, se conserva el WebP resultante y se indica `objetivo_700kb: false` en el manifiesto; no se sacrifica más calidad.
 
-URL del manifiesto:
-https://raw.githubusercontent.com/iniwor/m_news/main/portadas/<id-solicitud>/manifest.json
+El resultado se guarda en `portadas/<id>/<slug>.webp` y `portadas/<id>/<slug>.png` (respaldo). El manifiesto está en:
 
-Cada entrada del manifiesto tiene un campo url_directa que Buffer acepta como URL de imagen. Antes de programar, verificar que el manifiesto y el PNG final sean accesibles. Si falla la generación, no programar.
+`https://raw.githubusercontent.com/iniwor/m_news/main/portadas/<id>/manifest.json`
 
-Nunca incluir credenciales en la página HTML ni en las solicitudes JSON. El workflow necesita permisos de escritura sobre contents; las solicitudes deben crearse mediante el conector GitHub autorizado.
+**Para Buffer:** usa `portadas[].url_directa` (WebP), nunca el PNG de respaldo ni la URL del generador. Verifica la disponibilidad de la URL y el tipo de imagen antes de programar. El manifiesto incluye `url_png`, `calidad`, `bytes`, `bytes_png`, `ahorro_pct` y `objetivo_700kb`. Si Buffer rechaza WebP para algún canal, usa `url_png` y registra la incidencia, sin inventar enlaces ni alterar la plantilla.
+
+Nunca incluyas tokens ni credenciales en archivos públicos o solicitudes JSON. Si falla el renderizado o la carga de imágenes, no programes.
