@@ -1,4 +1,4 @@
-name: Generar portadas PNG para Buffer
+name: Generar portadas WebP y PNG para Buffer
 on:
   push:
     paths:
@@ -22,11 +22,11 @@ jobs:
           node-version: '22'
       - name: Instalar Playwright y Chromium
         run: |
-          npm install --no-save playwright
+          npm install --no-save playwright sharp
           npx playwright install --with-deps chromium
-      - name: Generar PNG desde la plantilla m_news
+      - name: Generar WebP optimizado y PNG de respaldo desde m_news
         run: node scripts/render-portadas.cjs
-      - name: Guardar PNG y manifiesto en GitHub
+      - name: Guardar WebP, PNG y manifiesto en GitHub
         run: |
           git add -A portadas/
           if git diff --cached --quiet; then
