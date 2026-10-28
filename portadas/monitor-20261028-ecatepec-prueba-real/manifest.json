@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261028-ecatepec-prueba-real",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "generado": "2026-10-28T22:30:31.684Z",
+  "portadas": [
+    {
+      "titulo": "Auto cae de puente en Ecatepec; conductor sobrevive",
+      "slug": "01-auto-cae-puente-ecatepec",
+      "archivo": "portadas/monitor-20261028-ecatepec-prueba-real/01-auto-cae-puente-ecatepec.png",
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-ecatepec-prueba-real/01-auto-cae-puente-ecatepec.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261028-ecatepec-prueba-real/01-auto-cae-puente-ecatepec.png",
+      "width": 1350,
+      "height": 1080,
+      "bytes": 1210031
+    }
+  ]
+}
