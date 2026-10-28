@@ -1,0 +1,96 @@
+'use strict';
+// Exportación automatizada del canvas ORIGINAL de m_news: no recrear su diseño.
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const { chromium } = require('playwright');
+const ROOT = path.resolve(__dirname, '..');
+const REQUESTS = path.join(ROOT, 'requests');
+const OUTPUT = path.join(ROOT, 'portadas');
+const GENERATOR = 'https://iniwor.github.io/m_news/';
+const REF = process.env.GITHUB_REF_NAME || 'main';
+const SAFE = /^[a-z0-9][a-z0-9_-]{0,79}$/;
+
+function validate(name, data) {
+  const id = path.basename(name, '.json');
+  if (!SAFE.test(id) || !Array.isArray(data.items) || data.items.length < 1 || data.items.length > 2) {
+    throw new Error('Solicitud inválida: ' + name);
+  }
+  const slugs = new Set();
+  for (const item of data.items) {
+    if (!item || typeof item.titulo !== 'string' || !item.titulo.trim() || item.titulo.length > 160 ||
+        typeof item.imagen !== 'string' || !/^https:\/\//.test(item.imagen) ||
+        typeof item.slug !== 'string' || !SAFE.test(item.slug) || slugs.has(item.slug)) {
+      throw new Error('Noticia inválida en ' + name);
+    }
+    slugs.add(item.slug);
+  }
+  return id;
+}
+
+async function render(page, item, filepath) {
+  await page.goto(GENERATOR, {waitUntil:'domcontentloaded', timeout:45000});
+  await page.waitForFunction(() => document.querySelector('#status')?.textContent === 'Listo', null, {timeout:65000});
+  const warning = await page.locator('#toast').textContent();
+  if (warning && warning.includes('No se pudo cargar el logotipo fijo')) {
+    throw new Error('Logotipo no disponible: se detiene la exportación.');
+  }
+  await page.evaluate(async input => {
+    await window.MonitorBatch.renderFromArray([input]);
+  }, item);
+  const state = await page.evaluate(() =>
+    window.MonitorBatch.getRendered().map(x => ({ok:x.ok,error:x.error}))
+  );
+  if (state.length !== 1 || !state[0].ok) throw new Error('Fotografía no cargada: ' + JSON.stringify(state));
+  await page.addStyleTag({content:[
+    '#cards .card {overflow:visible!important}',
+    '#cards .stage {overflow:visible!important;width:1350px!important}',
+    '#cards .stage canvas {width:1350px!important;height:1080px!important;max-width:none!important}'
+  ].join('\n')});
+  const canvas=page.locator('#cards .card canvas').first();
+  await canvas.waitFor({state:'visible',timeout:10000});
+  await canvas.screenshot({path:filepath,animations:'disabled',timeout:45000});
+  const png=await fs.readFile(filepath);
+  const width=png.readUInt32BE(16),height=png.readUInt32BE(20);
+  if(png.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||width!==1350||height!==1080) {
+    throw new Error('PNG inválido, tamaño '+width+'x'+height);
+  }
+  return {width,height,bytes:png.length};
+}
+
+async function main(){
+  await fs.mkdir(REQUESTS,{recursive:true});
+  await fs.mkdir(OUTPUT,{recursive:true});
+  const files=(await fs.readdir(REQUESTS)).filter(x=>x.endsWith('.json')).sort();
+  if(!files.length){console.log('Sin solicitudes.');return;}
+  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+  try{
+    const context=await browser.newContext({viewport:{width:1600,height:1300},deviceScaleFactor:1,locale:'es-MX'});
+    const page=await context.newPage();
+    for(const filename of files){
+      const data=JSON.parse(await fs.readFile(path.join(REQUESTS,filename),'utf8'));
+      const id=validate(filename,data);
+      const dir=path.join(OUTPUT,id);
+      const manifestPath=path.join(dir,'manifest.json');
+      try{await fs.access(manifestPath);console.log('Ya generada: '+id);continue;}catch(_){}
+      await fs.mkdir(dir,{recursive:true});
+      const portadas=[];
+      for(const item of data.items){
+        const pathname='portadas/'+id+'/'+item.slug+'.png';
+        const details=await render(page,item,path.join(ROOT,pathname));
+        portadas.push({
+          titulo:item.titulo,slug:item.slug,archivo:pathname,
+          url_directa:'https://raw.githubusercontent.com/iniwor/m_news/'+REF+'/'+pathname,
+          url_pages:'https://iniwor.github.io/m_news/'+pathname,
+          ...details
+        });
+        console.log('Portada exportada: '+pathname);
+      }
+      await fs.writeFile(manifestPath,JSON.stringify({
+        ok:true,solicitud:id,plantilla:GENERATOR,ref:REF,total:portadas.length,
+        generado:new Date().toISOString(),portadas
+      },null,2)+'\n');
+    }
+    await context.close();
+  }finally{await browser.close();}
+}
+main().catch(e=>{console.error(e.stack||String(e));process.exitCode=1;});
