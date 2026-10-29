@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261028-pm-181230",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-10-29T00:16:07.690Z",
+  "portadas": [
+    {
+      "titulo": "Detienen a presunto sucesor de El Tanque en el CJNG",
+      "slug": "01-detienen-sucesor-el-tanque-cjng",
+      "archivo": "portadas/monitor-20261028-pm-181230/01-detienen-sucesor-el-tanque-cjng.webp",
+      "archivo_png": "portadas/monitor-20261028-pm-181230/01-detienen-sucesor-el-tanque-cjng.png",
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-pm-181230/01-detienen-sucesor-el-tanque-cjng.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-pm-181230/01-detienen-sucesor-el-tanque-cjng.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-pm-181230/01-detienen-sucesor-el-tanque-cjng.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261028-pm-181230/01-detienen-sucesor-el-tanque-cjng.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 193424,
+      "bytes_png": 1715742,
+      "ahorro_pct": 89,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "Marina reporta muerte de presunto operador del Cártel de Guasave",
+      "slug": "02-marina-operador-cartel-guasave",
+      "archivo": "portadas/monitor-20261028-pm-181230/02-marina-operador-cartel-guasave.webp",
+      "archivo_png": "portadas/monitor-20261028-pm-181230/02-marina-operador-cartel-guasave.png",
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-pm-181230/02-marina-operador-cartel-guasave.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-pm-181230/02-marina-operador-cartel-guasave.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261028-pm-181230/02-marina-operador-cartel-guasave.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261028-pm-181230/02-marina-operador-cartel-guasave.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 80262,
+      "bytes_png": 650910,
+      "ahorro_pct": 88,
+      "objetivo_700kb": true
+    }
+  ]
+}
