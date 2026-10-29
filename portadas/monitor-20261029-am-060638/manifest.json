@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261029-am-060638",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-10-29T12:07:43.583Z",
+  "portadas": [
+    {
+      "titulo": "Muere Cuauhtémoc Cárdenas, referente histórico de la izquierda mexicana",
+      "slug": "01-muere-cuauhtemoc-cardenas",
+      "archivo": "portadas/monitor-20261029-am-060638/01-muere-cuauhtemoc-cardenas.webp",
+      "archivo_png": "portadas/monitor-20261029-am-060638/01-muere-cuauhtemoc-cardenas.png",
+      "imagen_utilizada": "https://www.elfinanciero.com.mx/resizer/v2/H7EWH2SEZBCCTPGTTBMUZGMZDY.jpeg?smart=true&auth=304dbd525e15538840e1dce3c0185a4d96c42a30138e396c1c818ce6ec5b418e&width=1200&height=630",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-am-060638/01-muere-cuauhtemoc-cardenas.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-am-060638/01-muere-cuauhtemoc-cardenas.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-am-060638/01-muere-cuauhtemoc-cardenas.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261029-am-060638/01-muere-cuauhtemoc-cardenas.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 77724,
+      "bytes_png": 607288,
+      "ahorro_pct": 87,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "Milwaukee conquista su primera Serie Mundial",
+      "slug": "02-milwaukee-primera-serie-mundial",
+      "archivo": "portadas/monitor-20261029-am-060638/02-milwaukee-primera-serie-mundial.webp",
+      "archivo_png": "portadas/monitor-20261029-am-060638/02-milwaukee-primera-serie-mundial.png",
+      "imagen_utilizada": "https://img.mlbstatic.com/mlb-images/image/upload/t_2x1/t_w1536/mlb/b3wn4pwaw1srwczmcpxs.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-am-060638/02-milwaukee-primera-serie-mundial.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-am-060638/02-milwaukee-primera-serie-mundial.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-am-060638/02-milwaukee-primera-serie-mundial.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261029-am-060638/02-milwaukee-primera-serie-mundial.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 134920,
+      "bytes_png": 1440379,
+      "ahorro_pct": 91,
+      "objetivo_700kb": true
+    }
+  ]
+}
