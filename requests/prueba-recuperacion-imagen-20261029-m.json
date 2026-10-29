@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "titulo": "PRUEBA TÉCNICA DE RECUPERACIÓN — NO PUBLICAR",
+      "imagen": "https://example.invalid/foto-inexistente.jpg",
+      "imagenes_alternativas": [
+        "https://www.digitalmex.mx/images/2026/OCTUBRE/28/auto-puente.jpg"
+      ],
+      "slug": "01-recuperacion-m"
+    }
+  ]
+}
