@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261029-pm-180913",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-10-30T00:10:54.183Z",
+  "portadas": [
+    {
+      "titulo": "Bloqueo colapsa México-Puebla por disputa de parque en Valle de Chalco",
+      "slug": "01-bloqueo-mexico-puebla-valle-de-chalco",
+      "archivo": "portadas/monitor-20261029-pm-180913/01-bloqueo-mexico-puebla-valle-de-chalco.webp",
+      "archivo_png": "portadas/monitor-20261029-pm-180913/01-bloqueo-mexico-puebla-valle-de-chalco.png",
+      "imagen_utilizada": "https://www.eluniversaledomex.com.mx/resizer/v2/HKFUM6VXNVDI5HG6DUTUWH354E.jpg?auth=a1784069268d6e626d13e4e20932a87e4a28874f463b659ae20c8ddb7cee0f8f&height=620&smart=true",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-pm-180913/01-bloqueo-mexico-puebla-valle-de-chalco.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-pm-180913/01-bloqueo-mexico-puebla-valle-de-chalco.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-pm-180913/01-bloqueo-mexico-puebla-valle-de-chalco.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261029-pm-180913/01-bloqueo-mexico-puebla-valle-de-chalco.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 118688,
+      "bytes_png": 1215003,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "Feminicida serial de Atizapán muere en prisión",
+      "slug": "02-feminicida-atizapan-muere-prision",
+      "archivo": "portadas/monitor-20261029-pm-180913/02-feminicida-atizapan-muere-prision.webp",
+      "archivo_png": "portadas/monitor-20261029-pm-180913/02-feminicida-atizapan-muere-prision.png",
+      "imagen_utilizada": "https://tvazteca.brightspotcdn.com/dims4/default/e0621b8/2147483647/strip/true/crop/1280x710%2B0%2B5/resize/752x417%21/format/webp/quality/90/?url=https%3A%2F%2Ftv-azteca-brightspot-production-us-west-2.s3.us-west-2.amazonaws.com%2Fed%2F26%2Feab8af29470dae879cad080cef25%2Fcanibal-monstruo-atizapan-feminicida-serial-edomex.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-pm-180913/02-feminicida-atizapan-muere-prision.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-pm-180913/02-feminicida-atizapan-muere-prision.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261029-pm-180913/02-feminicida-atizapan-muere-prision.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261029-pm-180913/02-feminicida-atizapan-muere-prision.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 71244,
+      "bytes_png": 1039016,
+      "ahorro_pct": 93,
+      "objetivo_700kb": true
+    }
+  ]
+}
