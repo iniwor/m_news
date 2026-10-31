@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261030-pm-180823",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-10-31T00:09:40.344Z",
+  "portadas": [
+    {
+      "titulo": "Recuperan camioneta robada y detienen a tres en Jilotepec",
+      "slug": "01-recuperan-camioneta-robada-jilotepec",
+      "archivo": "portadas/monitor-20261030-pm-180823/01-recuperan-camioneta-robada-jilotepec.webp",
+      "archivo_png": "portadas/monitor-20261030-pm-180823/01-recuperan-camioneta-robada-jilotepec.png",
+      "imagen_utilizada": "https://agencianvm.com.mx/uploads/smart_pos/blog/_spimg/tres-robos-1793378165__8dc74502275d__w1200.avif",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261030-pm-180823/01-recuperan-camioneta-robada-jilotepec.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261030-pm-180823/01-recuperan-camioneta-robada-jilotepec.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261030-pm-180823/01-recuperan-camioneta-robada-jilotepec.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261030-pm-180823/01-recuperan-camioneta-robada-jilotepec.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 102538,
+      "bytes_png": 1270341,
+      "ahorro_pct": 92,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "Aprehenden a presunto responsable de envenenar perros en la Condesa",
+      "slug": "02-aprehenden-presunto-envenenador-condesa",
+      "archivo": "portadas/monitor-20261030-pm-180823/02-aprehenden-presunto-envenenador-condesa.webp",
+      "archivo_png": "portadas/monitor-20261030-pm-180823/02-aprehenden-presunto-envenenador-condesa.png",
+      "imagen_utilizada": "https://cdn.amxinfra.com/unotv/images/2026/10/perros-parque-espana1-073624.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261030-pm-180823/02-aprehenden-presunto-envenenador-condesa.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261030-pm-180823/02-aprehenden-presunto-envenenador-condesa.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261030-pm-180823/02-aprehenden-presunto-envenenador-condesa.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261030-pm-180823/02-aprehenden-presunto-envenenador-condesa.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 79844,
+      "bytes_png": 905498,
+      "ahorro_pct": 91,
+      "objetivo_700kb": true
+    }
+  ]
+}
