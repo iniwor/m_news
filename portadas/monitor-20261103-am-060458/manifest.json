@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261103-am-060458",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-11-03T12:05:40.334Z",
+  "portadas": [
+    {
+      "titulo": "Corte de agua afecta tres días a seis comunidades de Izcalli",
+      "slug": "01-corte-agua-seis-comunidades-izcalli",
+      "archivo": "portadas/monitor-20261103-am-060458/01-corte-agua-seis-comunidades-izcalli.webp",
+      "archivo_png": "portadas/monitor-20261103-am-060458/01-corte-agua-seis-comunidades-izcalli.png",
+      "imagen_utilizada": "https://www.eluniversaledomex.com.mx/resizer/v2/IPKM5GG4RJE3ZGBV7XFY67D65E.jpg?auth=e655a45cbd1fcb4965216870ffbd130d94638204d7af3e12d84056b0c0d7a849",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-am-060458/01-corte-agua-seis-comunidades-izcalli.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-am-060458/01-corte-agua-seis-comunidades-izcalli.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-am-060458/01-corte-agua-seis-comunidades-izcalli.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261103-am-060458/01-corte-agua-seis-comunidades-izcalli.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 91802,
+      "bytes_png": 962767,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "México disputará el bronce de Baseball5 en Dakar 2026",
+      "slug": "02-mexico-bronce-baseball5-dakar2026",
+      "archivo": "portadas/monitor-20261103-am-060458/02-mexico-bronce-baseball5-dakar2026.webp",
+      "archivo_png": "portadas/monitor-20261103-am-060458/02-mexico-bronce-baseball5-dakar2026.png",
+      "imagen_utilizada": "https://imagenes.excelsior.com.mx/files/og_thumbnail/files/fp/uploads/2026/11/02/6ae92818b814f.r_d.977-549-5864.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-am-060458/02-mexico-bronce-baseball5-dakar2026.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-am-060458/02-mexico-bronce-baseball5-dakar2026.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-am-060458/02-mexico-bronce-baseball5-dakar2026.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261103-am-060458/02-mexico-bronce-baseball5-dakar2026.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 150468,
+      "bytes_png": 1437303,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    }
+  ]
+}
