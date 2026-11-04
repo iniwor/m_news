@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261104-am-060511",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "generado": "2026-11-04T12:05:45.977Z",
+  "portadas": [
+    {
+      "titulo": "Retiran bloqueo de transportistas en Tultitlán tras cuatro horas",
+      "slug": "01-retiran-bloqueo-transportistas-tultitlan",
+      "archivo": "portadas/monitor-20261104-am-060511/01-retiran-bloqueo-transportistas-tultitlan.webp",
+      "archivo_png": "portadas/monitor-20261104-am-060511/01-retiran-bloqueo-transportistas-tultitlan.png",
+      "imagen_utilizada": "https://cdn.amxinfra.com/unotv/images/2026/11/proyecto-nuevo-22-194135-1024x576.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-am-060511/01-retiran-bloqueo-transportistas-tultitlan.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-am-060511/01-retiran-bloqueo-transportistas-tultitlan.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-am-060511/01-retiran-bloqueo-transportistas-tultitlan.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261104-am-060511/01-retiran-bloqueo-transportistas-tultitlan.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 144784,
+      "bytes_png": 1396523,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    }
+  ]
+}
