@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261103-pm-180539",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-11-04T00:06:46.823Z",
+  "portadas": [
+    {
+      "titulo": "Restringen celulares durante clases y recreos en escuelas de Edomex",
+      "slug": "01-restringen-celulares-escuelas-edomex",
+      "archivo": "portadas/monitor-20261103-pm-180539/01-restringen-celulares-escuelas-edomex.webp",
+      "archivo_png": "portadas/monitor-20261103-pm-180539/01-restringen-celulares-escuelas-edomex.png",
+      "imagen_utilizada": "https://educacionbasica.sep.gob.mx/wp-content/uploads/2026/10/Foto-1-Noemi-Juarez_Apaga-la-pantalla.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-pm-180539/01-restringen-celulares-escuelas-edomex.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-pm-180539/01-restringen-celulares-escuelas-edomex.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-pm-180539/01-restringen-celulares-escuelas-edomex.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261103-pm-180539/01-restringen-celulares-escuelas-edomex.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 147752,
+      "bytes_png": 1451192,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "Choque de unidades pesadas reduce circulación en la Toluca-Naucalpan",
+      "slug": "02-choque-unidades-toluca-naucalpan",
+      "archivo": "portadas/monitor-20261103-pm-180539/02-choque-unidades-toluca-naucalpan.webp",
+      "archivo_png": "portadas/monitor-20261103-pm-180539/02-choque-unidades-toluca-naucalpan.png",
+      "imagen_utilizada": "https://lajornadaestadodemexico.com/resizer/9iWuQcRChTBktigtrwHhWaofHdw=/1200x675/filters:format(webp)/https://wp.lajornada.prod.andes.news/wp-content/uploads/2026/11/choque-en-la-toluca-naucalpan.png",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-pm-180539/02-choque-unidades-toluca-naucalpan.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-pm-180539/02-choque-unidades-toluca-naucalpan.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261103-pm-180539/02-choque-unidades-toluca-naucalpan.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261103-pm-180539/02-choque-unidades-toluca-naucalpan.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 91296,
+      "bytes_png": 951693,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    }
+  ]
+}
