@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "solicitud": "20261105-isaac-montoya-censura",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "generado": "2026-11-05T17:46:31.884Z",
+  "portadas": [
+    {
+      "titulo": "Isaac Montoya enfrenta señalamientos de censura, práctica que él mismo denunció en Naucalpan",
+      "slug": "isaac-montoya-censura-naucalpan",
+      "archivo": "portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.webp",
+      "archivo_png": "portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.png",
+      "imagen_utilizada": "https://pub-f73573fed9d64c62a2b7ef0a9bc28244.r2.dev/V%C3%ADctor%20G%C3%A1lvez%20y%20el%20panor%C3%A1mico%20suspendido.png",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 158034,
+      "bytes_png": 1458230,
+      "ahorro_pct": 89,
+      "objetivo_700kb": true
+    }
+  ]
+}
