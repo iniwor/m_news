@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261104-pm-180711",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 2,
+  "generado": "2026-11-05T00:08:00.386Z",
+  "portadas": [
+    {
+      "titulo": "Incendio suspende 11 estaciones de la Línea B",
+      "slug": "01-incendio-suspende-11-estaciones-linea-b",
+      "archivo": "portadas/monitor-20261104-pm-180711/01-incendio-suspende-11-estaciones-linea-b.webp",
+      "archivo_png": "portadas/monitor-20261104-pm-180711/01-incendio-suspende-11-estaciones-linea-b.png",
+      "imagen_utilizada": "https://cdn.amxinfra.com/unotv/images/2026/11/fotojet2111-072313-1024x576.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-pm-180711/01-incendio-suspende-11-estaciones-linea-b.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-pm-180711/01-incendio-suspende-11-estaciones-linea-b.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-pm-180711/01-incendio-suspende-11-estaciones-linea-b.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261104-pm-180711/01-incendio-suspende-11-estaciones-linea-b.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 114372,
+      "bytes_png": 1317011,
+      "ahorro_pct": 91,
+      "objetivo_700kb": true
+    },
+    {
+      "titulo": "ASF revisará 25 años de contratos del INE y organismos locales",
+      "slug": "02-asf-revisara-25-anos-contratos-ine",
+      "archivo": "portadas/monitor-20261104-pm-180711/02-asf-revisara-25-anos-contratos-ine.webp",
+      "archivo_png": "portadas/monitor-20261104-pm-180711/02-asf-revisara-25-anos-contratos-ine.png",
+      "imagen_utilizada": "https://imagenes.eleconomista.com.mx/files/webp_768_448/uploads/2026/11/03/6aea9bf9d031d.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-pm-180711/02-asf-revisara-25-anos-contratos-ine.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-pm-180711/02-asf-revisara-25-anos-contratos-ine.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261104-pm-180711/02-asf-revisara-25-anos-contratos-ine.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261104-pm-180711/02-asf-revisara-25-anos-contratos-ine.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 91680,
+      "bytes_png": 966121,
+      "ahorro_pct": 91,
+      "objetivo_700kb": true
+    }
+  ]
+}
