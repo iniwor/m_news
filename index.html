@@ -129,7 +129,7 @@ var $=function(s,c){return(c||document).querySelector(s)};
 var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
 var W=1350,H=1080;
 var LOGO_FIJO='https://lh3.googleusercontent.com/d/1ijgxW2hBqYsO0lmG_FIhoV7pzKYjfrAH=w1000';
-var LOGO_POS='left',LOGO_SIZE=158,ADORNO='#E4322B',LINEA=640,RATIO=1.06;
+var LOGO_POS=new URLSearchParams(location.search).get('logo')==='right'?'right':'left',LOGO_SIZE=158,ADORNO='#E4322B',LINEA=640,RATIO=1.06;
 var state={fx:50,fy:45,zoom:100,escala:70,grad:100,logo:null,logoTainted:false,items:[],rendered:[]};
 var toastEl=$('#toast'),toastT;
 function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('on')},4200)}
