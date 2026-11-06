@@ -129,6 +129,15 @@ async function getRequestFiles() {
     }
     return [filename];
   }
+  // GitHub Actions entrega explícitamente los archivos del commit.
+  const selected = (process.env.REQUEST_FILES || '').split(/[\r\n,]+/).map(x => x.trim()).filter(Boolean);
+  if (selected.length) {
+    const files = [...new Set(selected.map(x => x.startsWith('requests/') ? x.slice('requests/'.length) : x))];
+    if (files.some(x => !x.endsWith('.json') || !SAFE.test(x.slice(0,-5)) || x.includes('/'))) {
+      throw new Error('REQUEST_FILES contiene rutas inválidas.');
+    }
+    return files.sort();
+  }
   if (process.env.GITHUB_EVENT_PATH) {
     const event = JSON.parse(await fs.readFile(process.env.GITHUB_EVENT_PATH, 'utf8'));
     const commits = [...(event.commits || []), ...(event.head_commit ? [event.head_commit] : [])];
