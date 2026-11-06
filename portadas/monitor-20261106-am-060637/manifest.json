@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261106-am-060637",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-06T12:07:21.506Z",
+  "portadas": [
+    {
+      "titulo": "Tren arroja automóvil a canal y altera Mexibús en Ecatepec",
+      "slug": "01-tren-auto-canal-ecatepec",
+      "archivo": "portadas/monitor-20261106-am-060637/01-tren-auto-canal-ecatepec.webp",
+      "archivo_png": "portadas/monitor-20261106-am-060637/01-tren-auto-canal-ecatepec.png",
+      "imagen_utilizada": "https://www.nmas.com.mx/_next/image/?q=75&url=https%3A%2F%2Fstatic.nmas.com.mx%2FNmas%2Fcms%2F1793944082734-snapshot-1376x774.jpg&w=1920",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261106-am-060637/01-tren-auto-canal-ecatepec.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261106-am-060637/01-tren-auto-canal-ecatepec.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261106-am-060637/01-tren-auto-canal-ecatepec.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261106-am-060637/01-tren-auto-canal-ecatepec.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 118900,
+      "bytes_png": 1314418,
+      "ahorro_pct": 91,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
