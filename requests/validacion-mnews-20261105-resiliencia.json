@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "titulo": "Prueba de integridad del generador Monitor Informativo",
+      "imagen": "https://pub-f73573fed9d64c62a2b7ef0a9bc28244.r2.dev/V%C3%ADctor%20G%C3%A1lvez%20y%20el%20panor%C3%A1mico%20suspendido.png",
+      "slug": "01-validacion-foto-real"
+    },
+    {
+      "titulo": "Prueba de tolerancia ante una imagen inaccesible",
+      "imagen": "https://iniwor.github.io/m_news/no-existe-validacion-20261105.jpg",
+      "slug": "02-validacion-imagen-inaccesible"
+    }
+  ]
+}
