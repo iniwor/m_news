@@ -1,0 +1,23 @@
+{
+  "ok": false,
+  "solicitud": "validacion-mnews-20261105-resiliencia",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 0,
+  "solicitadas": 2,
+  "parcial": true,
+  "generado": "2026-11-06T06:12:55.196Z",
+  "portadas": [],
+  "errores": [
+    {
+      "slug": "01-validacion-foto-real",
+      "titulo": "Verificación técnica real del generador Monitor Informativo",
+      "error": "No se pudo generar portada 01-validacion-foto-real: agotadas 1 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
+    },
+    {
+      "slug": "02-validacion-imagen-inaccesible",
+      "titulo": "Prueba de tolerancia ante una imagen inaccesible",
+      "error": "No se pudo generar portada 02-validacion-imagen-inaccesible: agotadas 1 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
+    }
+  ]
+}
