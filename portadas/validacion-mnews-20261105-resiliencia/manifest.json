@@ -1,19 +1,36 @@
 {
-  "ok": false,
+  "ok": true,
   "solicitud": "validacion-mnews-20261105-resiliencia",
   "plantilla": "https://iniwor.github.io/m_news/",
   "ref": "main",
-  "total": 0,
+  "total": 1,
   "solicitadas": 2,
   "parcial": true,
-  "generado": "2026-11-06T06:12:55.196Z",
-  "portadas": [],
-  "errores": [
+  "generado": "2026-11-06T06:14:36.613Z",
+  "portadas": [
     {
+      "titulo": "Prueba de renderizado con archivo PNG existente en GitHub",
       "slug": "01-validacion-foto-real",
-      "titulo": "Verificación técnica real del generador Monitor Informativo",
-      "error": "No se pudo generar portada 01-validacion-foto-real: agotadas 1 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
-    },
+      "archivo": "portadas/validacion-mnews-20261105-resiliencia/01-validacion-foto-real.webp",
+      "archivo_png": "portadas/validacion-mnews-20261105-resiliencia/01-validacion-foto-real.png",
+      "imagen_utilizada": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/20261105-isaac-montoya-censura/isaac-montoya-censura-naucalpan.png",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/validacion-mnews-20261105-resiliencia/01-validacion-foto-real.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/validacion-mnews-20261105-resiliencia/01-validacion-foto-real.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/validacion-mnews-20261105-resiliencia/01-validacion-foto-real.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/validacion-mnews-20261105-resiliencia/01-validacion-foto-real.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 135368,
+      "bytes_png": 1360219,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": [
     {
       "slug": "02-validacion-imagen-inaccesible",
       "titulo": "Prueba de tolerancia ante una imagen inaccesible",
