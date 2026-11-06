@@ -42,10 +42,10 @@ jobs:
             fi
             {
               echo "REQUEST_FILES<<MONITOR_FILES_END"
-              printf '%s\\n' "${changed[@]}"
+              printf '%s\n' "${changed[@]}"
               echo "MONITOR_FILES_END"
             } >> "$GITHUB_ENV"
-            printf 'Solicitudes detectadas: %s\\n' "${changed[*]}"
+            printf 'Solicitudes detectadas: %s\n' "${changed[*]}"
           fi
       - name: Configurar Node.js
         uses: actions/setup-node@v4
