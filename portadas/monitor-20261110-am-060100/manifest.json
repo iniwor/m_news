@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261110-am-060100",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-10T12:00:52.972Z",
+  "portadas": [
+    {
+      "titulo": "INE reabre módulos tras acuerdo salarial con trabajadores",
+      "slug": "01-ine-reabre-modulos-tras-acuerdo-salarial",
+      "archivo": "portadas/monitor-20261110-am-060100/01-ine-reabre-modulos-tras-acuerdo-salarial.webp",
+      "archivo_png": "portadas/monitor-20261110-am-060100/01-ine-reabre-modulos-tras-acuerdo-salarial.png",
+      "imagen_utilizada": "https://centralelectoral.ine.mx/wp-content/uploads/2026/11/INE-MAC-1024x682.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261110-am-060100/01-ine-reabre-modulos-tras-acuerdo-salarial.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261110-am-060100/01-ine-reabre-modulos-tras-acuerdo-salarial.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261110-am-060100/01-ine-reabre-modulos-tras-acuerdo-salarial.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261110-am-060100/01-ine-reabre-modulos-tras-acuerdo-salarial.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 134298,
+      "bytes_png": 1394377,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
