@@ -1,0 +1,23 @@
+{
+  "ok": false,
+  "solicitud": "monitor-20261110-pm-180026",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 0,
+  "solicitadas": 2,
+  "parcial": true,
+  "generado": "2026-11-11T00:01:09.973Z",
+  "portadas": [],
+  "errores": [
+    {
+      "slug": "01-letrero-colapsa-circuito-exterior-tultepec",
+      "titulo": "Letrero colapsa y cierra el Circuito Exterior Mexiquense en Tultepec",
+      "error": "No se pudo generar portada 01-letrero-colapsa-circuito-exterior-tultepec: agotadas 1 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
+    },
+    {
+      "slug": "02-protesta-estudiantil-teschi-chimalhuacan",
+      "titulo": "Protesta estudiantil suspende clases por segundo día en el TESChi",
+      "error": "No se pudo generar portada 02-protesta-estudiantil-teschi-chimalhuacan: agotadas 2 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":2,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
+    }
+  ]
+}
