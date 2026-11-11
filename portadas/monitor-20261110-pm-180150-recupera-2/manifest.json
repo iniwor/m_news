@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261110-pm-180150-recupera-2",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-11T00:02:58.319Z",
+  "portadas": [
+    {
+      "titulo": "Protesta estudiantil suspende clases por segundo día en el TESChi",
+      "slug": "02-protesta-estudiantil-teschi-chimalhuacan",
+      "archivo": "portadas/monitor-20261110-pm-180150-recupera-2/02-protesta-estudiantil-teschi-chimalhuacan.webp",
+      "archivo_png": "portadas/monitor-20261110-pm-180150-recupera-2/02-protesta-estudiantil-teschi-chimalhuacan.png",
+      "imagen_utilizada": "https://edomex.quadratin.com.mx/www/wp-content/uploads/2026/11/Chimalhuacan-1-1160x700.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261110-pm-180150-recupera-2/02-protesta-estudiantil-teschi-chimalhuacan.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261110-pm-180150-recupera-2/02-protesta-estudiantil-teschi-chimalhuacan.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261110-pm-180150-recupera-2/02-protesta-estudiantil-teschi-chimalhuacan.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261110-pm-180150-recupera-2/02-protesta-estudiantil-teschi-chimalhuacan.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 173458,
+      "bytes_png": 1566953,
+      "ahorro_pct": 89,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
