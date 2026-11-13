@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "solicitud": "prueba-tecnica-logotipo-20261112-1794535221700",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-13T02:01:35.399Z",
+  "portadas": [
+    {
+      "titulo": "Prueba técnica del logotipo de Monitor Informativo",
+      "slug": "prueba-logotipo",
+      "archivo": "portadas/prueba-tecnica-logotipo-20261112-1794535221700/prueba-logotipo.webp",
+      "logotipo_verificado": true,
+      "archivo_png": "portadas/prueba-tecnica-logotipo-20261112-1794535221700/prueba-logotipo.png",
+      "imagen_utilizada": "https://www.digitalmex.mx/images/2026/NOVIEMBRE/12/accidente-autobuses-3_1.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/prueba-tecnica-logotipo-20261112-1794535221700/prueba-logotipo.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/prueba-tecnica-logotipo-20261112-1794535221700/prueba-logotipo.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/prueba-tecnica-logotipo-20261112-1794535221700/prueba-logotipo.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/prueba-tecnica-logotipo-20261112-1794535221700/prueba-logotipo.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 128364,
+      "bytes_png": 1247063,
+      "ahorro_pct": 90,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
