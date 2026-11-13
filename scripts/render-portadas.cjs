@@ -35,10 +35,11 @@ function validate(name, data) {
 
 async function render(page, item, filepath) {
   await page.goto(GENERATOR, {waitUntil:'domcontentloaded', timeout:45000});
-  await page.waitForFunction(() => document.querySelector('#status')?.textContent === 'Listo', null, {timeout:65000});
-  const warning = await page.locator('#toast').textContent();
-  if (warning && warning.includes('No se pudo cargar el logotipo fijo')) {
-    throw new Error('Logotipo no disponible: se detiene la exportación.');
+  await page.waitForFunction(() =>
+    ['Listo','Error de logotipo'].includes(document.querySelector('#status')?.textContent),
+    null, {timeout:65000});
+  if (!await page.evaluate(() => window.MonitorBatch.hasLogo())) {
+    throw new Error('Logotipo de Monitor Informativo no disponible: se detiene la exportación.');
   }
   await page.evaluate(async input => {
     await window.MonitorBatch.renderFromArray([input]);
@@ -160,6 +161,11 @@ async function main() {
   try {
     const context = await browser.newContext({viewport:{width:1600,height:1300},deviceScaleFactor:1,locale:'es-MX'});
     const page = await context.newPage();
+    // Sirve la plantilla original y su logotipo desde el mismo commit.
+    await page.route(GENERATOR, route => route.fulfill({path:path.join(ROOT, 'index.html')}));
+    await page.route(new URL('assets/monitor-logo.jpg', GENERATOR).href,
+      route => route.fulfill({path:path.join(ROOT, 'assets', 'monitor-logo.jpg')})
+        .catch(() => route.abort()));
     for (const filename of files) {
       const id = path.basename(filename, '.json');
       const dir = path.join(OUTPUT, id);
@@ -207,7 +213,7 @@ async function main() {
             await renderWithFallback(page, item, path.join(ROOT,pngPath));
           const optimized = await compressWebp(path.join(ROOT,pngPath), path.join(ROOT,webpPath));
           portadas.push({
-            titulo:item.titulo,slug:item.slug,archivo:webpPath,
+            titulo:item.titulo,slug:item.slug,archivo:webpPath,logotipo_verificado:true,
             archivo_png:pngPath,
             imagen_utilizada,alternativa_usada,intentos_imagen,
             url_directa:rootUrl+webpPath,
