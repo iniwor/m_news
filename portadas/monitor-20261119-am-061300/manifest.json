@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261119-am-061300",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-19T12:05:31.304Z",
+  "portadas": [
+    {
+      "titulo": "Incendio destruye juegos infantiles y obliga a cerrar puente en Ecatepec",
+      "slug": "01-incendio-juegos-puente-ecatepec",
+      "archivo": "portadas/monitor-20261119-am-061300/01-incendio-juegos-puente-ecatepec.webp",
+      "logotipo_verificado": true,
+      "archivo_png": "portadas/monitor-20261119-am-061300/01-incendio-juegos-puente-ecatepec.png",
+      "imagen_utilizada": "https://edomex.quadratin.com.mx/www/wp-content/uploads/2026/11/4ee9f3fd-fef2-46aa-9b8b-a1a14450d13a-1160x700.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261119-am-061300/01-incendio-juegos-puente-ecatepec.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261119-am-061300/01-incendio-juegos-puente-ecatepec.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261119-am-061300/01-incendio-juegos-puente-ecatepec.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261119-am-061300/01-incendio-juegos-puente-ecatepec.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 69548,
+      "bytes_png": 1002305,
+      "ahorro_pct": 93,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
