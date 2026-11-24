@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261124-am-060700",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 2,
+  "parcial": true,
+  "generado": "2026-11-24T12:05:12.000Z",
+  "portadas": [
+    {
+      "titulo": "Comerciantes bloquean Periférico Norte y provocan filas kilométricas",
+      "slug": "01-bloqueo-periferico-norte-naucalpan",
+      "archivo": "portadas/monitor-20261124-am-060700/01-bloqueo-periferico-norte-naucalpan.webp",
+      "logotipo_verificado": true,
+      "archivo_png": "portadas/monitor-20261124-am-060700/01-bloqueo-periferico-norte-naucalpan.png",
+      "imagen_utilizada": "https://static.nmas.com.mx/Nmas/cms/1795486253436-snapshot-1376x774.jpg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261124-am-060700/01-bloqueo-periferico-norte-naucalpan.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261124-am-060700/01-bloqueo-periferico-norte-naucalpan.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261124-am-060700/01-bloqueo-periferico-norte-naucalpan.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261124-am-060700/01-bloqueo-periferico-norte-naucalpan.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 129336,
+      "bytes_png": 1414174,
+      "ahorro_pct": 91,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": [
+    {
+      "slug": "02-mexico-sin-premios-emmy-internacionales",
+      "titulo": "México se queda sin premios en los Emmy Internacionales",
+      "error": "No se pudo generar portada 02-mexico-sin-premios-emmy-internacionales: agotadas 1 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
+    }
+  ]
+}
