@@ -1,0 +1,17 @@
+{
+  "ok": false,
+  "solicitud": "monitor-20261126-pm-180125",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 0,
+  "solicitadas": 0,
+  "parcial": false,
+  "generado": "2026-11-27T00:03:50.920Z",
+  "portadas": [],
+  "errores": [
+    {
+      "slug": null,
+      "error": "Solicitud inválida: Solicitud inválida: monitor-20261126-pm-180125.json"
+    }
+  ]
+}
