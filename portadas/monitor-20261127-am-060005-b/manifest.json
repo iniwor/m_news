@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261127-am-060005-b",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-27T12:02:43.282Z",
+  "portadas": [
+    {
+      "titulo": "Diputados plantean frenar abusos tras alzas en seguros médicos",
+      "slug": "03-seguros-medicos-alzas",
+      "archivo": "portadas/monitor-20261127-am-060005-b/03-seguros-medicos-alzas.webp",
+      "logotipo_verificado": true,
+      "archivo_png": "portadas/monitor-20261127-am-060005-b/03-seguros-medicos-alzas.png",
+      "imagen_utilizada": "https://elfinanciero-elfinanciero-prod.cdn.arcpublishing.com/resizer/XpHI6ZZmuscM5daialeeCJmd_tY=/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/K5HFTTQQANHFRPXSOCY5OPYTXE.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261127-am-060005-b/03-seguros-medicos-alzas.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261127-am-060005-b/03-seguros-medicos-alzas.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261127-am-060005-b/03-seguros-medicos-alzas.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261127-am-060005-b/03-seguros-medicos-alzas.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 78342,
+      "bytes_png": 997213,
+      "ahorro_pct": 92,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
