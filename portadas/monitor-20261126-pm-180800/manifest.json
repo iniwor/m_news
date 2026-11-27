@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261126-pm-180800",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-27T00:09:03.728Z",
+  "portadas": [
+    {
+      "titulo": "Rehabilitaran avenida Convento de Santa Monica en Tlalnepantla",
+      "slug": "02-rehabilitacion-avenida-santa-monica-tlalnepantla",
+      "archivo": "portadas/monitor-20261126-pm-180800/02-rehabilitacion-avenida-santa-monica-tlalnepantla.webp",
+      "logotipo_verificado": true,
+      "archivo_png": "portadas/monitor-20261126-pm-180800/02-rehabilitacion-avenida-santa-monica-tlalnepantla.png",
+      "imagen_utilizada": "https://edomex.quadratin.com.mx/www/wp-content/uploads/2026/11/Arranca-Tlalnepantla-rehabilitacion-de-avenida-Convento-de-Santa-Monica-1-1160x700.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261126-pm-180800/02-rehabilitacion-avenida-santa-monica-tlalnepantla.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261126-pm-180800/02-rehabilitacion-avenida-santa-monica-tlalnepantla.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261126-pm-180800/02-rehabilitacion-avenida-santa-monica-tlalnepantla.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261126-pm-180800/02-rehabilitacion-avenida-santa-monica-tlalnepantla.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 187168,
+      "bytes_png": 1665743,
+      "ahorro_pct": 89,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
