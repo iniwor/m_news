@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "solicitud": "monitor-20261126-pm-180125-b",
+  "plantilla": "https://iniwor.github.io/m_news/",
+  "ref": "main",
+  "total": 1,
+  "solicitadas": 1,
+  "parcial": false,
+  "generado": "2026-11-27T00:05:53.410Z",
+  "portadas": [
+    {
+      "titulo": "Fallas en semaforos generan caos vial en Terminal de Toluca",
+      "slug": "03-fallas-semaforos-terminal-toluca",
+      "archivo": "portadas/monitor-20261126-pm-180125-b/03-fallas-semaforos-terminal-toluca.webp",
+      "logotipo_verificado": true,
+      "archivo_png": "portadas/monitor-20261126-pm-180125-b/03-fallas-semaforos-terminal-toluca.png",
+      "imagen_utilizada": "https://edomex.quadratin.com.mx/www/wp-content/uploads/2026/11/Provoca-caos-vial-fallas-en-semaforos-en-Terminal-de-Toluca-1-1160x700.jpeg",
+      "alternativa_usada": false,
+      "intentos_imagen": 1,
+      "url_directa": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261126-pm-180125-b/03-fallas-semaforos-terminal-toluca.webp",
+      "url_webp": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261126-pm-180125-b/03-fallas-semaforos-terminal-toluca.webp",
+      "url_png": "https://raw.githubusercontent.com/iniwor/m_news/main/portadas/monitor-20261126-pm-180125-b/03-fallas-semaforos-terminal-toluca.png",
+      "url_pages": "https://iniwor.github.io/m_news/portadas/monitor-20261126-pm-180125-b/03-fallas-semaforos-terminal-toluca.webp",
+      "width": 1350,
+      "height": 1080,
+      "formato": "webp",
+      "calidad": 90,
+      "bytes": 167758,
+      "bytes_png": 1545758,
+      "ahorro_pct": 89,
+      "objetivo_700kb": true
+    }
+  ],
+  "errores": []
+}
