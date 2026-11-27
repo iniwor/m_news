@@ -6,7 +6,7 @@
   "total": 1,
   "solicitadas": 2,
   "parcial": true,
-  "generado": "2026-11-27T00:05:10.440Z",
+  "generado": "2026-11-27T00:07:09.359Z",
   "portadas": [
     {
       "titulo": "Localizan a trabajador desaparecido tras incendio en Toluca",
@@ -35,7 +35,7 @@
     {
       "slug": "02-modulo-apoyo-mujeres-atizapan",
       "titulo": "Atizapan suma otro modulo de apoyo para mujeres victimas de violencia",
-      "error": "No se pudo generar portada 02-modulo-apoyo-mujeres-atizapan: agotadas 1 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
+      "error": "No se pudo generar portada 02-modulo-apoyo-mujeres-atizapan: agotadas 3 URL(s) verificadas. [{\"candidata\":1,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":1,\"intento\":2,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":2,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"},{\"candidata\":3,\"intento\":1,\"error\":\"Fotografía no cargada: [{\\\"ok\\\":false,\\\"error\\\":\\\"No se pudo cargar la imagen.\\\"}]\"}]"
     }
   ]
 }
